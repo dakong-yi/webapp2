@@ -2,11 +2,11 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:p="http://www.springframework.org/schema/p" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
+       http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!--引入数据库配置文件jdbc.properties-->
     <context:property-placeholder location="classpath:jdbc.properties"/>
@@ -18,13 +18,6 @@
           p:url="${jdbc.url}"
           p:username="${jdbc.username}"
           p:password="${jdbc.password}"/>
-    <!--    <bean id="userMapperImpl" class="admin.mapper.UserMapperImpl"-->
-    <!--        p:sqlSessionFactory-ref="sqlSessionFactory"-->
-    <!--    />-->
-    <!--    <bean id="roleMapperImpl" class="admin.mapper.RoleMapperImpl"-->
-    <!--        p:sqlSessionFactory-ref="sqlSessionFactory"-->
-    <!--    />-->
-
     <!--
         配置SqlSessionFactory对象
 
@@ -55,5 +48,4 @@
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
           p:dataSource-ref="dataSource"
     />
-
 </beans>
