@@ -11,6 +11,16 @@ public class User {
     private Integer flag;
     private String last_login_time;
     private String update_time;
+    private Role role;
+
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
 
     public Integer getId() {
         return id;
